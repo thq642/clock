@@ -1,63 +1,61 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Open Sans",sans-serif;
 }
-html,body{
-  display: grid;
-  height: 100%;
-  place-items: center;
-  background: #000;
-}
-.wrapper{
-  height: 100px;
-  width: 360px;
-  position: relative;
-  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
-  border-radius: 10px;
-  cursor: default;
-  animation: animate 1.5s linear infinite;
-}
-.wrapper .display,
-.wrapper span{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.wrapper .display{
-  z-index: 999;
-  height: 85px;
-  width: 345px;
-  background: #1b1b1b;
-  border-radius: 6px;
+
+body{
+  display: flex;
+  height: 100vh;
+  background-color: #111;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
-.display #time{
-  line-height: 85px;
-  color: #fff;
-  font-size: 50px;
+
+.menu a{
+  display: inline-block;
+  margin: 30px;
+  padding: 12px 60px;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  font-size: 30px;
   font-weight: 600;
-  letter-spacing: 1px;
-  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: animate 1.5s linear infinite;
+  transition: .3s linear;
+  position: relative;
 }
-@keyframes animate {
-  100%{
-    filter: hue-rotate(360deg);
-  }
+
+.menu a:hover{
+  color: #111;
 }
-.wrapper span{
-  height: 100%;
+
+.menu a::before,
+.menu a::after{
+  content: "";
+  position: absolute;
   width: 100%;
-  border-radius: 10px;
-  background: inherit;
+  height: 0%;
+  left: 0;
+  box-sizing: border-box;
+  z-index: -1;
 }
-.wrapper span:first-child{
-  filter: blur(7px);
+
+.menu a::before{
+  bottom: 0;
+  border-left: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+  transition: .3s linear;
 }
-.wrapper span:last-child{
-  filter: blur(20px);
+
+.menu a::after{
+  top: 0;
+  background-color: #f1f1f1;
+  transition: .3s linear .3s;
+}
+
+.menu a:hover::before,
+.menu a:hover::after{
+  height: 100%;
 }
