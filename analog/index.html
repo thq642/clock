@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Clean Analog</title>
+        
+      <meta name="title" content="Clean Analog">
+      <meta name="description" content="just clean analog clock">
+
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://clock.mikailthoriq.ml">
+      <meta property="og:title" content="Clean Analog">
+      <meta property="og:description" content="just clean analog clock">
+      <meta property="og:image" content="https://server3.riqq-cdn.cf/0:/Pics/analogcleanclock.png">
+
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://clock.mikailthoriq.ml">
+      <meta property="twitter:title" content="Clean Analog">
+      <meta property="twitter:description" content="just clean analog clock">
+      <meta property="twitter:image" content="https://server3.riqq-cdn.cf/0:/Pics/analogcleanclock.png">
+
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="clock">
+         <div class="center-nut"></div>
+         <div class="center-nut2"></div>
+         <div class="indicators">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+         </div>
+         <div class="sec-hand">
+            <div class="sec"></div>
+         </div>
+         <div class="min-hand">
+            <div class="min"></div>
+         </div>
+         <div class="hr-hand">
+            <div class="hr"></div>
+         </div>
+      </div>
+      <script>
+         const sec = document.querySelector(".sec");
+         const min = document.querySelector(".min");
+         const hr = document.querySelector(".hr");
+         setInterval(function(){
+           let time  = new Date();
+           let secs = time.getSeconds() * 6;
+           let mins = time.getMinutes() * 6;
+           let hrs = time.getHours() * 30;
+           sec.style.transform = `rotateZ(${secs}deg)`;
+           min.style.transform = `rotateZ(${mins}deg)`;
+           hr.style.transform = `rotateZ(${hrs+(mins/12)}deg)`;
+         });
+      </script>
+   </body>
+</html>
