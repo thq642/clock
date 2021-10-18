@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+
+      <!-- Primary Meta Tags -->
+      <title>RGB Clock</title>
+        
+        <meta name="title" content="RGB Clock">
+        <meta name="description" content="Clock that does changes to colorful rgb thingy">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://metatags.io/">
+        <meta property="og:title" content="RGB Clock">
+        <meta property="og:description" content="Clock that does changes to colorful rgb thingy">
+        <meta property="og:image" content="https://server3.riqq-cdn.cf/0:/Pics/rgbclock.png">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://metatags.io/">
+        <meta property="twitter:title" content="RGB Clock">
+        <meta property="twitter:description" content="Clock that does changes to colorful rgb thingy">
+        <meta property="twitter:image" content="https://server3.riqq-cdn.cf/0:/Pics/rgbclock.png">
+
+        <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="display">
+            <div id="time"></div>
+         </div>
+         <span></span>
+         <span></span>
+      </div>
+      <script>
+         setInterval(()=>{
+           const time = document.querySelector(".display #time");
+           let date = new Date();
+           let hours = date.getHours();
+           let minutes = date.getMinutes();
+           let seconds = date.getSeconds();
+           let day_night = "AM";
+           if(hours > 12){
+             day_night = "PM";
+             hours = hours - 12;
+           }
+           if(seconds < 10){
+             seconds = "0" + seconds;
+           }
+           if(minutes < 10){
+             minutes = "0" + minutes;
+           }
+           if(hours < 10){
+             hours = "0" + hours;
+           }
+           time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+         });
+      </script>
+   </body>
+</html>
